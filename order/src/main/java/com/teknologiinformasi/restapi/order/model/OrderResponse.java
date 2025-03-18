@@ -1,5 +1,6 @@
 package com.teknologiinformasi.restapi.order.model;
 
+
 public class OrderResponse {
     private Order order;
     private Produk product;
@@ -23,6 +24,7 @@ public class OrderResponse {
         this.product = product;
     }
  }
+ 
  
  
  

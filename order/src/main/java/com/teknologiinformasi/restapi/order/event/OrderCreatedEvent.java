@@ -1,44 +1,27 @@
-package com.teknologiinformasi.restapi.order.model;
+package com.teknologiinformasi.restapi.order.event;
 
-import jakarta.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
-
-
-@Entity
-@Table(name = "orders")
-public class Order {
-
-
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
-
-
-   // Menyimpan ID produk dari Product Service
+public class OrderCreatedEvent implements Serializable {
+   private String orderId;
    private Long productId;
-  
    private int quantity;
    private LocalDateTime orderDate;
-   private String orderStatus;
-
-
-   public Order() {}
-
-
-   public Order(Long productId, int quantity, LocalDateTime orderDate, String orderStatus) {
+   private String orderStatus; // misal: CREATED
+   public OrderCreatedEvent() {}
+   public OrderCreatedEvent(String orderId, Long productId, int quantity, LocalDateTime orderDate, String orderStatus) {
+       this.orderId = orderId;
        this.productId = productId;
        this.quantity = quantity;
        this.orderDate = orderDate;
        this.orderStatus = orderStatus;
    }
-
-
-   // Getters dan Setters
-   public Long getId() {
-       return id;
+   // Getters & Setters
+   public String getOrderId() {
+       return orderId;
    }
-   public void setId(Long id) {
-       this.id = id;
+   public void setOrderId(String orderId) {
+       this.orderId = orderId;
    }
    public Long getProductId() {
        return productId;
@@ -63,5 +46,15 @@ public class Order {
    }
    public void setOrderStatus(String orderStatus) {
        this.orderStatus = orderStatus;
+   }
+   @Override
+   public String toString() {
+       return "OrderCreatedEvent{" +
+               "orderId=" + orderId +
+               ", productId=" + productId +
+               ", quantity=" + quantity +
+               ", orderDate=" + orderDate +
+               ", orderStatus='" + orderStatus + '\'' +
+               '}';
    }
 }

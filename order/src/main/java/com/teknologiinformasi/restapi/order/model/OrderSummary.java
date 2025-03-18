@@ -1,31 +1,27 @@
 package com.teknologiinformasi.restapi.order.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name = "orders")
-public class Order {
-
-
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
-
-
-   // Menyimpan ID produk dari Product Service
-   private Long productId;
+@Table(name = "order_summary")
+public class OrderSummary {
   
+   @Id
+   private String orderId;
+   private Long productId;
    private int quantity;
    private LocalDateTime orderDate;
    private String orderStatus;
+  
+   public OrderSummary() {}
 
 
-   public Order() {}
-
-
-   public Order(Long productId, int quantity, LocalDateTime orderDate, String orderStatus) {
+   public OrderSummary(String orderId, Long productId, int quantity, LocalDateTime orderDate, String orderStatus) {
+       this.orderId = orderId;
        this.productId = productId;
        this.quantity = quantity;
        this.orderDate = orderDate;
@@ -33,12 +29,12 @@ public class Order {
    }
 
 
-   // Getters dan Setters
-   public Long getId() {
-       return id;
+   // Getters & Setters
+   public String getOrderId() {
+       return orderId;
    }
-   public void setId(Long id) {
-       this.id = id;
+   public void setOrderId(String orderId) {
+       this.orderId = orderId;
    }
    public Long getProductId() {
        return productId;
