@@ -4,13 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import com.teknologiinformasi.restapi.model.Produk;
-import com.teknologiinformasi.restapi.service.ProdukService;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.teknologiinformasi.restapi.model.Produk;
+import com.teknologiinformasi.restapi.service.ProdukService;
 
 @RestController
 @RequestMapping("/api/produk")
@@ -53,12 +51,13 @@ public class ProdukController {
     // Endpoint untuk menghapus produk
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, String>> deleteProduk(@PathVariable Long id) {
-        Map<String, String> response = new HashMap<>();
         try {
             produkService.deleteProduk(id);
+            Map<String, String> response = new HashMap<>();
             response.put("message", "Produk berhasil dihapus");
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
+            Map<String, String> response = new HashMap<>();
             response.put("message", "Produk tidak ditemukan dengan id " + id);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         }
