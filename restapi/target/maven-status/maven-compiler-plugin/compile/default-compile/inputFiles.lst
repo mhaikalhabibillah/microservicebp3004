@@ -1,0 +1,8 @@
+C:\Kuliah\SMT 4\restapi\src\main\java\com\teknologiinformasi\restapi\config\ProdukRabbitConfig.java
+C:\Kuliah\SMT 4\restapi\src\main\java\com\teknologiinformasi\restapi\controller\ProdukController.java
+C:\Kuliah\SMT 4\restapi\src\main\java\com\teknologiinformasi\restapi\event\OrderCreatedEvent.java
+C:\Kuliah\SMT 4\restapi\src\main\java\com\teknologiinformasi\restapi\model\Produk.java
+C:\Kuliah\SMT 4\restapi\src\main\java\com\teknologiinformasi\restapi\repository\ProdukRepository.java
+C:\Kuliah\SMT 4\restapi\src\main\java\com\teknologiinformasi\restapi\RestApiApplication.java
+C:\Kuliah\SMT 4\restapi\src\main\java\com\teknologiinformasi\restapi\service\OrderMessageConsumer.java
+C:\Kuliah\SMT 4\restapi\src\main\java\com\teknologiinformasi\restapi\service\ProdukService.java
