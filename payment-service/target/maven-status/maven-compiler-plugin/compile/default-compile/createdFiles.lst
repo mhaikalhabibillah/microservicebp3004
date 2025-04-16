@@ -1,5 +1,0 @@
-com\teknologiinformasi\paymen\model\Payment.class
-com\teknologiinformasi\paymen\repository\PaymentRepository.class
-com\teknologiinformasi\paymen\service\PaymentService.class
-com\teknologiinformasi\paymen\PaymenServiceApplication.class
-com\teknologiinformasi\paymen\controller\PaymentController.class
